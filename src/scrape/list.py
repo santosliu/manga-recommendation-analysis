@@ -5,6 +5,7 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 import time # 導入 time 模組
+import random # 導入 random 模組
 
 # 加載 .env 文件中的環境變量
 load_dotenv()
@@ -126,7 +127,7 @@ if __name__ == "__main__":
         print(f"正在抓取頁面: {url}")
         scrape_manhuagui_list(url)
         print("-" * 50) # 頁面分隔線
-        time.sleep(5) # 每一頁抓取完畢後休息 5 秒
+        time.sleep(random.randint(3, 10)) # 每一頁抓取完畢後隨機休息 3 到 10 秒
         
         # test_counter += 1
         # if test_counter > 3:
